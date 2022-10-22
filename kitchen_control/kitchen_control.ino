@@ -12,26 +12,27 @@
 
 DHT dht(DHTPIN, DHTTYPE);
 
+#define MQ2 PA5   // กำหนดขาต่อกับ A0 ของ mq-2
+
 void setup() {
   Serial.begin(115200);
   dht.begin();
 }
 
 void loop() {
-  
-  delay(2000);
-  
+
   // อ่านค่าจากเซนเซอร์ DHT
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
-// เช็คกรณีอ่านค่าไม่ได้ ให้กลับไปเริ่มใหม่
-  if (isnan(h) || isnan(t)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return;
-  }
+  // อ่านค่าจากเซนเซอร์ mq-2
+  int gas = analogRead(PA5);
 
-  Serial.print("Humidity: ");Serial.print(h);
-  Serial.print("%  Temperature: ");Serial.print(t);Serial.println("°C ");
-  
+  // แสดงค่า
+  Serial.print("Humidity: "); Serial.print(h);
+  Serial.print("%  Temperature: "); Serial.print(t); Serial.println("°C ");
+  Serial.print("Gas: "); Serial.println(gas);
+
+  delay(2000);
+
 }
