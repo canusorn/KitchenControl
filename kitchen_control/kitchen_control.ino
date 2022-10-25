@@ -1,4 +1,3 @@
-
 // ไลบรารี่ที่ใช้เพิ่มเติม
 // - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
@@ -26,11 +25,11 @@ void setup() {
 
 void loop() {
 
-  // อ่านค่าจากเซนเซอร์ DHT
+  // อ่านค่าจากเซนเซอร์ DHT - รับค่าเซนเซอร์ดิจิตอล
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
-  // อ่านค่าจากเซนเซอร์ mq-2
+  // อ่านค่าจากเซนเซอร์ mq-2 - รับค่าเซนเซอร์อนาลอก
   int gas = analogRead(PA5);    // อ่านค่าอนาลอก มีค่า 0-4095
 
   // แสดงค่า
