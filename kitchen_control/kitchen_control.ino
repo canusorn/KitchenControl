@@ -16,6 +16,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   Serial.begin(115200);
+  Serial2.begin(9600);
 
   dht.begin();
 
@@ -34,8 +35,13 @@ void loop() {
 
   // แสดงค่า
   Serial.print("Humidity: "); Serial.print(h);
-  Serial.print("%  Temperature: "); Serial.print(t); Serial.println("°C ");
+  Serial.print("%  Temperature: "); Serial.print(t); Serial.print("°C ");
   Serial.print("Gas: "); Serial.println(gas);
+
+    // ส่งค่าไปยัง ESP8266
+  Serial2.print("Humidity:"); Serial2.print(h);
+  Serial2.print(" Temperature:"); Serial2.print(t);
+  Serial2.print(" Gas:"); Serial2.print(gas);Serial2.print("\n");
 
   // เงือนไขการทำงานพัดลม
   if (gas > 2500 || t > 40) {             // แก้สมากกว่า 2500 หรืออุณหภูมิสูงกว่า 40 ให้รีเลย์ทำงาน
