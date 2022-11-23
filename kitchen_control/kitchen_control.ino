@@ -1,8 +1,20 @@
-// ไลบรารี่ที่ใช้เพิ่มเติม
+/*
+ไลบรารี่ที่ใช้เพิ่มเติม
 // - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
 
 // โค้ด DHT อ้างอิงจากตัวอย่าง DHT sensor Library > DHTtester
+
+  INPUT DHT11 อุณหภูมิ ดิจิตอล
+  PB11
+
+  INPUT MQ2 เซนเซอร์แก้ส อนาลอก
+  PA5
+
+  OUTPUT RELAY
+  PC13
+*/ 
+
 
 #include "DHT.h"
 
