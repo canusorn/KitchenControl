@@ -24,7 +24,7 @@ SoftwareSerial stmSerial(D4, D3); // RX, TX
 // ตั้งค่า wifi ที่ต้องการเชื่อมต่อ
 #ifndef STASSID
 #define STASSID "ชื่อไวไฟ"
-#define STAPSK  "รหัสไวไฟ"
+#define STAPSK  "รหัสผ่าน"
 #endif
 
 const char *ssid = STASSID;
@@ -51,12 +51,7 @@ background-color: #cccccc;                        =>    สีพื้นหล
 font-family: Arial, Helvetica, Sans-Serif;        =>    ฟอร์น
 Color: #000088; text-align: center;               =>    สีตัวอักษร
 
-รูปภาพ svg
-ที่มารูป https://fontawesome.com/icons/lightbulb?s=solid&f=classic
-ปรับแต่งสี http://www.svgbasics.com/colour.html
-ปรับขนาดรูป https://css-tricks.com/scale-svg/
 */
-
 
   String payload;   // สร้างตัวแปรสตริงเก็บโค้ด html
 
@@ -69,8 +64,6 @@ Color: #000088; text-align: center;               =>    สีตัวอัก
     <style>\
       body { background-color: #cccccc; font-family: Arial, Helvetica, Sans-Serif; Color: #000088; text-align: center; }\
     </style>\
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'/>\
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>\
   </head>\
   <body>\
     <h1>Kitchen control</h1>\
